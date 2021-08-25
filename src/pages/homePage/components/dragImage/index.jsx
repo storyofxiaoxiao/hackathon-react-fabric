@@ -1,29 +1,73 @@
-import React from 'react';
+import { fabric } from "fabric";
+import React, { useCallback, useEffect } from "react";
 import './index.scss';
 export default function DragImage() {
-  return (
-    <div className="text-center py-5 light-bg">
-      <div className="container">
-        <div className="mx-auto fs-2">
-          brand
-        </div>
-        <div className="mb-5 mx-auto small-line-segment mt-2"></div>
-        <div className="row">
-          <div className="col-lg-6">
-            <img src="/images/jing.svg" alt="精益求精" srcSet="" />
-            <h2 className="mt-4 mb-3">精益求精</h2>
-            <p>Some representative placeholder content for the three columns of text below the carousel. This is the first
-              column.</p>
-          </div>
-          <div className="col-lg-6">
-            <img src="/images/xie.svg" alt="协力和协" srcSet="" />
-            <h2 className="mt-4 mb-3">协力和协</h2>
-            <p>And lastly this, the third column of representative placeholder content.</p>
-          </div>
-        </div>
-      </div>
-    </div>
 
+  const init = useCallback(
+    () => {
+      // create a wrapper around native canvas element (with id="canvas")
+      var canvas = new fabric.Canvas("canvas", {
+        height: 800,
+        width: 800,
+      });
+      //背景图片
+      canvas.setBackgroundImage(
+        '/images/album/cut1.jpg',
+        canvas.renderAll.bind(canvas),
+        {
+          top: 0,
+          left: 0,
+          originX: 'left',
+          originY: 'top',
+        }
+      )
+
+      canvas.renderAll();
+      fabric.Object.prototype.transparentCorners = false;
+
+      // create a rectangle object
+      // var rect = new fabric.Rect({
+      //   left: 100,
+      //   top: 100,
+      //   fill: 'red',
+      //   width: 20,
+      //   height: 20
+      // });
+
+      // "add" rectangle onto canvas
+      // canvas.add(rect);
+
+      // rect.set({ left: 20, top: 50 });
+      // canvas.renderAll();
+      fabric.Image.fromURL('/images/ladybug.png', function (img) {
+        img.set({
+          left: fabric.util.getRandomInt(0, 600),
+          top: fabric.util.getRandomInt(0, 500),
+          angle: fabric.util.getRandomInt(0, 90)
+        });
+
+        img.perPixelTargetFind = true;
+        img.hasControls = img.hasBorders = false;
+
+        img.scale(fabric.util.getRandomInt(50, 100) / 100);
+
+        canvas.add(img);
+      });
+
+      // canvas.setBackgroundImage('/images/cut1.jpg', canvas.renderAll.bind(canvas));
+    },
+    [],
+  )
+
+  useEffect(() => {
+    // createCanvas();
+    init();
+  }, []);
+
+  return (
+    <div className="light-bg">
+      <canvas id="canvas" width="300" height="300"></canvas>
+    </div>
   );
 
 }
