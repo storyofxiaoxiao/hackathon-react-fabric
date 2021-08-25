@@ -1,8 +1,9 @@
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './core/components/app';
 import reportWebVitals from './reportWebVitals';
+import './styles/shared.scss';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,3 +16,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+

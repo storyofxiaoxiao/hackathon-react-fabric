@@ -1,0 +1,43 @@
+@import '../../styles/shared.scss';
+
+
+.product-top {
+  height: px2rem(592); //37rem
+  width: 100%;
+
+  @include media-breakpoint-down('lg') {
+    height: px2rem(520);
+  }
+
+  @include media-breakpoint-down('sm') {
+    height: px2rem(220);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .blue {
+    color: $jx-blue;
+  }
+
+  .title {
+    letter-spacing: 6px;
+    font-size: px2rem(40);
+
+    @include media-breakpoint-down(md) {
+      font-size: px2rem(38);
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: px2rem(24);
+    }
+  }
+
+  .img-arrow {
+    width: px2rem(114);
+    height: px2rem(30);
+  }
+}
