@@ -1,0 +1,64 @@
+.App {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.container-bg {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.bg-pic {
+  height: 100%;
+
+}
+
+/* //cover */
+.top {
+  z-index: 99;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .head {
+    // width: 100%;
+    // height: 100%;
+  }
+}
+
+.bottom {
+  z-index: 99;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.panda-container {
+  z-index: 3;
+  // width: 200px;
+  // height: 200px;
+  position: absolute;
+  top: 520px;
+  left: 1150px;
+
+  .panda {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+}

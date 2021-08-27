@@ -12,6 +12,12 @@ const routeConfigs = [
     path: '/products',
     exact: true,
     Component: lazy(() => import('../pages/products')),
+  },
+  {
+    name: 'book',
+    path: '/book',
+    exact: true,
+    Component: lazy(() => import('../pages/book')),
   }
 ]
 export default routeConfigs;

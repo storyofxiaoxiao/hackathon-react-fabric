@@ -1,43 +1,25 @@
 @import '../../styles/shared.scss';
 
+.light-bg {
+  background-color: $jx-light-grey;
+  width: px2rem(800);
+  height: px2rem(800);
+}
 
-.product-top {
-  height: px2rem(592); //37rem
-  width: 100%;
+#canvas-content {
+  width: px2rem(800) !important;
+  height: px2rem(800) !important;
+}
 
-  @include media-breakpoint-down('lg') {
-    height: px2rem(520);
-  }
+.canvas-container {
+  width: 100% !important;
+  height: 100% !important;
+}
 
-  @include media-breakpoint-down('sm') {
-    height: px2rem(220);
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .blue {
-    color: $jx-blue;
-  }
-
-  .title {
-    letter-spacing: 6px;
-    font-size: px2rem(40);
-
-    @include media-breakpoint-down(md) {
-      font-size: px2rem(38);
-    }
-
-    @include media-breakpoint-down(sm) {
-      font-size: px2rem(24);
-    }
-  }
-
-  .img-arrow {
-    width: px2rem(114);
-    height: px2rem(30);
-  }
+.successDialog {
+  position: absolute;
+  padding: 20px;
+  background-color: black;
+  color: aquamarine;
+  // display: none;
 }
