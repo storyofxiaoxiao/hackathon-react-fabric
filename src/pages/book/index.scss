@@ -14,13 +14,59 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  // .btn {
-
-  //   flex-shrink: 1;
-  // }
+  margin-top: 50px;
 }
 
-.video {
-  margin-top: 30px;
+.pic-gif {
+  margin-top: 70px;
+}
+
+.popup {
+  position: absolute;
+  margin: 30px;
+  width: 1400px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 30px 50px;
+
+  &.video {
+    width: auto;
+    padding: 30px 130px;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 80px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1441px) {
+  .pic-gif {
+    width: 800px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .btn-container {
+    margin-top: 30px;
+    justify-content: space-around;
+
+    .btn {
+      width: 330px;
+    }
+  }
+
+  .popup {
+    width: 1000px;
+
+    &.video {
+      padding: 30px 130px;
+    }
+  }
 }
