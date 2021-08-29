@@ -13,7 +13,7 @@ export default function Video() {
   }
   return (
     <div>
-      <YouTube videoId="GFCen6pNPyY" opts={opts} onReady={_onReady} />
+      <YouTube videoId="qCsjRw5lhso" opts={opts} onReady={_onReady} />
     </div>
   );
 }
